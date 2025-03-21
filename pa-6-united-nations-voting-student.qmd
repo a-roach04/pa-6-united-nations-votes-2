@@ -1,6 +1,6 @@
 ---
 title: "United Nations Voting Records"
-author: "The names of your group members go here!"
+author: "Aiden and Ronny"
 format: 
   html: default
   gfm: default
@@ -135,27 +135,27 @@ Comment on the following code, what is happening in each line?  One way to appro
 
 ```{r}
 unvotes |> 
-  count(country, vote) |> #comment
-  group_by(country) |> #comment
-  mutate(total = sum(n)) |> #comment 
-  mutate(prop_vote = n/total) |> #comment
+  count(country, vote) |> # count votes by country
+  group_by(country) |> # grouping countries by RCID
+  mutate(total = sum(n)) |> # create a column of the total count of votes
+  mutate(prop_vote = n/total) |> # create a column of the proportion of votes
   filter(country %in% c("United States", "Canada", 
                         "Germany", "France",
                         "Italy", "Japan",
-                        "United Kingdom")) |> #comment
+                        "United Kingdom")) |> # include these countries
   ggplot(aes(x = country, y = prop_vote, 
-             fill = vote)) + #comment
-  geom_col(position = position_stack()) + #comment
+             fill = vote)) + # create the plot with country on x axis and proportion on y
+  geom_col(position = position_stack()) + # position the data as a bar chart
   labs(x = "Group of Seven Countries",
        y = "Proportion of Votes",
        title = "Voting Record of the G7",
-       fill = "Vote") + #comment
-  theme_minimal() +  #comment
-  scale_fill_viridis_d(end = 0.8) + #comment
-  coord_flip() #comment
+       fill = "Vote") + # create labels for axis and title
+  theme_minimal() +  # change the theme of the plot
+  scale_fill_viridis_d(end = 0.8) + # sets the color scheme
+  coord_flip() # rotate the orientation
 ```
 
-> Describe what the graph above demonstrates above UN voting records for the G7 
+> Demonstrates the proportion of the G7 countries who voted yes, no, or abstain. For example, France had the highest proportion of "abstain" votes and Germany had the highest proportion of "yes" votes. 
   
   
   
