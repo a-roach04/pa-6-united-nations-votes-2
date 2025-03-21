@@ -113,7 +113,7 @@ roll_calls <- read_csv("data/roll_calls.csv")
 
 ```{r}
 #edit to read in issues
-issue <- read_csv("data/issues.csv")
+issues <- read_csv("data/issues.csv")
 ```
 
 
@@ -237,7 +237,7 @@ dim(roll_calls)
 ```
 
 
-> Insert Answer Here
+> There is an uneven number of rows in the two datasets, so the one with the higher number of rows will be reduced to match the dataset with the lower number of rows.
 
 
 
@@ -245,27 +245,27 @@ Now let's try joining the `roll_calls` with the `issues` data.  Compare the foll
 
 ```{r}
 roll_calls |> 
-  left_join(issues, by = "rcid") #description of join
+  left_join(issues, by = "rcid") # join issues to roll_calls by rcid
 ```
 
 ```{r}
 roll_calls |> 
-  right_join(issues, by = "rcid") #description of join
+  right_join(issues, by = "rcid") # join roll_calls to issues by rcid
 ```
 
 ```{r}
 roll_calls |> 
-  full_join(issues, by = "rcid") #description of join
+  full_join(issues, by = "rcid") # fully joins both tables to each other
 ```
 
 ```{r}
 roll_calls |> 
-  inner_join(issues, by = "rcid") #description of join
+  inner_join(issues, by = "rcid") # keeps any values that match from both tables
 ```
 
 **If we are only interested in retaining the records associated with the `issues` labeled in our data, which join(s) should we use?**
 
-> Insert answer here
+> Use inner joing because it will maintain only rows with a match from both datasets.
 
 
 
