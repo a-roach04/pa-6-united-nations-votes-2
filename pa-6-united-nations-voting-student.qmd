@@ -175,7 +175,7 @@ roll_calls |>
   distinct(short)
 ```
 
-> Description of code results
+> It pulls out the column short which is a short description of what the UN is voting on. 
 
 
 
@@ -196,7 +196,7 @@ roll_calls |>
 
 What information is missing from the above graphic that might be useful in understanding the issues the UN commonly votes on?
 
-> Insert Answer Here
+> The missing piece of information is what specifically is being voted on. More specifically whether the votes were on an amendment or not 
 
 
 
@@ -208,7 +208,7 @@ roll_calls |>
 
 Does the above information help us understand the voting issues of the UN over time? Explain.
 
-> Insert your answer here
+> This won't be helpful because each short has its own independent value and not grouped by an overall issue. 
 
 
 
